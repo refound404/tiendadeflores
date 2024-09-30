@@ -1,0 +1,160 @@
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Playfair+Display:wght@700&display=swap');
+
+/* Estilos generales */
+body {
+    height: 100%; /* Hacer que el body ocupe el 100% de la altura de la ventana */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #4A4A4A;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #2D572C; /* Verde oscuro para los títulos */
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    min-height: calc(100vh - 120px); /* Aseguramos que el contenedor ocupe la altura restante */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #A3C9A8;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #A3C9A8;
+}
+
+button {
+    background-color: #FFB6C1; /* Botón rosa pastel */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF80AB; /* Un rosa más fuerte */
+}
+
+/* Lista de productos */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F0FFF4;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #A3C9A8; /* Borde verde a la izquierda */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul li a {
+    color: #E57373;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #D32F2F;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #A3C9A8;
+    color: white;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floristería Moderna</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="#agregar">Agregar Producto</a>
+        <a href="#buscar">Buscar Producto</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1>Floristería Belleza Natural</h1>
+
+        <!-- Sección de agregar productos -->
+        <h2 id="agregar">Agregar Nuevo Producto</h2>
+        <form action="/agregar" method="POST">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" name="nombre" required placeholder="Ej. Rosa Roja">
+            
+            <label for="cantidad">Cantidad</label>
+            <input type="number" name="cantidad" min="1" required placeholder="Ej. 100">
+            
+            <button type="submit">Agregar Producto</button>
+        </form>
+
+        <!-- Sección de búsqueda -->
+        <h2 id="buscar">Buscar Producto</h2>
+        <form action="/buscar" method="POST">
+            <label for="nombre">Nombre del producto</label>
+            <input type="text" name="nombre" required placeholder="Ej. Rosa Roja">
+            
+            <button type="submit">Buscar</button>
+        </form>
+
+        <!-- Lista de productos -->
+        <h2>Lista de Productos</h2>
+        <ul>
+            {% for producto in inventario %}
+            <li>
+                <strong>{{ producto['nombre'] }}</strong> - Cantidad: {{ producto['cantidad'] }}
+                <a href="/eliminar/{{ producto['nombre'] }}">Eliminar</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Floristería Belleza Natural</p>
+    </footer>
+
+</body>
+</html>

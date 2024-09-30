@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Producto - Floristería</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="#buscar">Buscar Producto</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h1>Resultado de la Búsqueda</h1>
+        
+        {% if producto %}
+            <p>Producto encontrado: <strong>{{ producto['nombre'] }}</strong> - Cantidad: {{ producto['cantidad'] }}</p>
+        {% else %}
+            <p>Producto no encontrado.</p>
+        {% endif %}
+        
+        <a href="/">Volver al Inventario</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Floristería Belleza Natural</p>
+    </footer>
+
+</body>
+</html>
